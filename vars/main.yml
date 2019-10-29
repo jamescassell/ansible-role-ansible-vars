@@ -1,0 +1,25 @@
+---
+# vars file for ansible-vars
+
+# ansible_vars: "{{ lookup('together', ansible_vars_keys, ansible_vars_values, wantlist=True) | dict }}"  # didn't work with complex values, use zip instead
+ansible_vars: "{{ ansible_vars_keys | zip(ansible_vars_values) | dict }}"
+ansible_vars_values: "{{ ansible_vars_keys | map('extract', ansible_vars_internal) | list }}"
+ansible_vars_keys: >-
+ {{ ansible_vars_keys_internal | difference(ansible_vars_remove) | list | sort | unique }}
+ansible_vars_varnames: "{{ ansible_vars_keys }}"
+
+# ansible_vars_items: "{{ lookup('dict', ansible_vars, wantlist=True) }}"  # does not work due to "recursive loop detected in template string"
+
+
+ansible_vars_internal: "{{ vars }}"
+ansible_vars_keys_internal: "{{ vars.keys() | list }}"
+
+ansible_vars_remove:
+- vars
+- ansible_vars
+- ansible_vars_values
+- ansible_vars_keys
+- ansible_vars_varnames
+- ansible_vars_items
+- ansible_vars_internal
+- ansible_vars_remove
