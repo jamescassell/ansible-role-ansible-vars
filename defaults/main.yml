@@ -1,0 +1,16 @@
+---
+# defaults file for ansible-vars
+
+# This role has no user-configurable defaults.  These "defaults" are here
+# solely to demonstrate the types of the variables available when depending on
+# this role.
+
+# dict containing variable names mapped to variable values
+ansible_vars: {}
+# a list of the available ansible variables
+ansible_vars_keys: []
+# list of values of each ansible variable in the same order as ansible_vars_keys
+ansible_vars_values: []
+
+# an alias to ansible_vars_keys, ostensibly identical to `q('varnames', '.')`
+ansible_vars_varnames: "{{ ansible_vars_keys }}"

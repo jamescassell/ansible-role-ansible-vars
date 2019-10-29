@@ -1,0 +1,12 @@
+---
+galaxy_info:
+  author: James Cassell
+  description: Define ansible_vars dict to access all other ansible variables.
+  # company: your company (optional)
+
+  license: (Apache-2.0 or MIT or BSD-3-Clause) and GPL-3.0-or-later
+
+  min_ansible_version: 2.2
+
+  platforms:
+dependencies: []
