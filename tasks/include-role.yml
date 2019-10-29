@@ -1,6 +1,0 @@
----
-# trivial include_role
-
-- name: "{{ a_v_name }}"
-  include_role:
-    name: "{{ a_v_role }}"

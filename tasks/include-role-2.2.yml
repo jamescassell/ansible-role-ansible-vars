@@ -1,0 +1,6 @@
+---
+# trivial include_role
+
+- name: plugins for ansible 2.2
+  include_role:
+    name: ansible-vars/roles/compat-2.2

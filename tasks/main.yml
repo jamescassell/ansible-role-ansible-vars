@@ -1,10 +1,7 @@
 ---
 # tasks file for ansible-vars
 
-- name: "{{ a_v_name }}"
-  include: include-role.yml
+- name: plugins for ansible 2.2
+  include: include-role-2.2.yml
   static: no
   when: ansible_version.string is version_compare('2.3', '<')
-  vars:
-    a_v_name: plugins for ansible 2.2
-    a_v_role: roles/compat-2.2
